@@ -3,7 +3,7 @@ Test Classification on 5 classes.
 
 ## Getting Started
 
-The problem consist of classify images of shirt into 5 different classes according to the type of sleeves.
+The problem consists in classifying images of shirts into 5 different classes according to the type of sleeves.
 
 ### Prerequisites
 
@@ -12,10 +12,12 @@ Download the dataset and copy it to the notebook path.
 
 ## Running the tests
 
-The solution is based on the fine tuning of VGG16 network, pretrained on imagenet, with the dense layer changed for this particular task.
-Tha dataset is splitted into training and validation set, keeping the number of samples for class (500) the same for each class. This is done with image transformations for increase the sample for that classes with less elements. The remaining images are used for validation.
+The solution is based on the fine tuning of VGG16 network, pretrained on imagenet, with the dense layers adapted for this particular task.
+
+Tha dataset is splitted into training and validation set, keeping the number of samples for class (500) the same for each class. This is done with image transformations for increasing the samples for that classes with less elements. The remaining images are used for validation.
 The images are loaded in batches using keras api applying data augmentation.
-The training uses early stopping to avoid overfitting and the best result are achieved after 6 epoch. A checkpoint callbacs is used to save only the weight that decrease the validation loss.
+
+The training uses early stopping to avoid overfitting and the best result are achieved after 6 epoch. A checkpoint callback is used to save only the weight that decrease the validation loss.
 The best weights are renamed as 'weights.hdf5' and loaded to make a brief evaluation ok the results.
 In particular, the test reach an accuracy of 0.93.
 
